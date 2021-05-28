@@ -7,24 +7,28 @@ PODS:
   - AFNetworking/Security (4.0.1)
   - AFNetworking/Serialization (4.0.1)
   - CHCUIKit (0.1.2)
+  - HandyJSON (5.0.2)
   - YTKNetwork (3.0.0):
     - AFNetworking/NSURLSession (~> 4.0)
 
 DEPENDENCIES:
   - CHCUIKit (= 0.1.2)
+  - HandyJSON (= 5.0.2)
   - YTKNetwork (= 3.0.0)
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - CHCUIKit
+    - HandyJSON
     - YTKNetwork
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   CHCUIKit: f84105c4dcc9f42917cfc0a49f1374cab3304f6b
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   YTKNetwork: 0587ce85fda2e2c591405089cc9aaa61649aa5ed
 
-PODFILE CHECKSUM: c984cb947c97f68892d43f96d64fcf60aeabc94f
+PODFILE CHECKSUM: 10062822dfa06d27c12b62007ceb8230ae9f4dbc
 
 COCOAPODS: 1.10.1
