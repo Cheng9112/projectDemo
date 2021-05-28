@@ -1,0 +1,30 @@
+PODS:
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - CHCUIKit (0.1.2)
+  - YTKNetwork (3.0.0):
+    - AFNetworking/NSURLSession (~> 4.0)
+
+DEPENDENCIES:
+  - CHCUIKit (= 0.1.2)
+  - YTKNetwork (= 3.0.0)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - CHCUIKit
+    - YTKNetwork
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  CHCUIKit: f84105c4dcc9f42917cfc0a49f1374cab3304f6b
+  YTKNetwork: 0587ce85fda2e2c591405089cc9aaa61649aa5ed
+
+PODFILE CHECKSUM: c984cb947c97f68892d43f96d64fcf60aeabc94f
+
+COCOAPODS: 1.10.1
