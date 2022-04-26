@@ -11,11 +11,10 @@ import Regift
 import Photos
 import Gallery
 
-class ViewController: UIViewController, GalleryControllerDelegate {
+class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
             
         let button = UIButton(type: .custom)
         button.setTitle("视频转gif", for: .normal)
@@ -29,10 +28,10 @@ class ViewController: UIViewController, GalleryControllerDelegate {
             make.top.equalToSuperview().offset(100)
             make.centerX.equalToSuperview()
         }
-        
-        DDLogInfo("Hello")
-//        LocationManager.shared.availableLocationService()
     }
+}
+
+extension ViewController: GalleryControllerDelegate {
     
     @objc func videoCoverToGif() {
         
@@ -91,5 +90,6 @@ class ViewController: UIViewController, GalleryControllerDelegate {
     func galleryControllerDidCancel(_ controller: GalleryController) {
         controller.dismiss(animated: true, completion: nil)
     }
+
 }
 

@@ -11,10 +11,9 @@
 		140B2B68274232050033F071 /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140B2B67274232050033F071 /* UIView+Toast.swift */; };
 		14846CAF2660D5FB003CDD8A /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14846CAE2660D5FB003CDD8A /* BaseModel.swift */; };
 		14846CB32660D630003CDD8A /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14846CB22660D630003CDD8A /* BaseRequest.swift */; };
+		149D589628115685001F17C2 /* WebViewBaseScriptEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D589528115685001F17C2 /* WebViewBaseScriptEvent.swift */; };
+		14B6A84827E5B20300C44A20 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6A84727E5B20300C44A20 /* WebViewController.swift */; };
 		14C30586274B83C8006A6746 /* SwiftHeadFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C30585274B83C8006A6746 /* SwiftHeadFile.swift */; };
-		14C305AB274CEF84006A6746 /* LocationBgTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C305A9274CEF84006A6746 /* LocationBgTask.swift */; };
-		14C305AC274CEF84006A6746 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C305AA274CEF84006A6746 /* LocationManager.swift */; };
-		14C305AE274CEFC9006A6746 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C3058D274B9D3F006A6746 /* CoreLocation.framework */; };
 		344A8ADD2654AC5E00986D3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344A8ADC2654AC5E00986D3E /* AppDelegate.swift */; };
 		344A8AE12654AC5E00986D3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344A8AE02654AC5E00986D3E /* ViewController.swift */; };
 		344A8AE62654AC5F00986D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 344A8AE52654AC5F00986D3E /* Assets.xcassets */; };
@@ -28,10 +27,10 @@
 		140B2B67274232050033F071 /* UIView+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
 		14846CAE2660D5FB003CDD8A /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		14846CB22660D630003CDD8A /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		149D589528115685001F17C2 /* WebViewBaseScriptEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewBaseScriptEvent.swift; sourceTree = "<group>"; };
+		14B6A84727E5B20300C44A20 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		14C30585274B83C8006A6746 /* SwiftHeadFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHeadFile.swift; sourceTree = "<group>"; };
 		14C3058D274B9D3F006A6746 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		14C305A9274CEF84006A6746 /* LocationBgTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationBgTask.swift; sourceTree = "<group>"; };
-		14C305AA274CEF84006A6746 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		14C5937E2660D3D3007BD8E5 /* projectDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "projectDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		2ABB6603B513E40D840CEFD8 /* Pods-projectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectDemo.debug.xcconfig"; path = "Target Support Files/Pods-projectDemo/Pods-projectDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		344A8AD92654AC5E00986D3E /* projectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14C305AE274CEFC9006A6746 /* CoreLocation.framework in Frameworks */,
 				79AD4957E1B0E6ACC36EF646 /* Pods_projectDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,15 +79,6 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		146132D0273BB74E003BB321 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				14C305A9274CEF84006A6746 /* LocationBgTask.swift */,
-				14C305AA274CEF84006A6746 /* LocationManager.swift */,
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
 		14846CAC2660D5AE003CDD8A /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +95,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		14B6A84027DA516000C44A20 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				14B6A84727E5B20300C44A20 /* WebViewController.swift */,
+				149D589528115685001F17C2 /* WebViewBaseScriptEvent.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		14C5936C2660CF91007BD8E5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +117,6 @@
 		14C5936D2660CFA3007BD8E5 /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				146132D0273BB74E003BB321 /* Tool */,
 				344A8AE02654AC5E00986D3E /* ViewController.swift */,
 			);
 			path = Business;
@@ -138,6 +135,7 @@
 		14C5936F2660D178007BD8E5 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				14B6A84027DA516000C44A20 /* WebView */,
 				14C593702660D193007BD8E5 /* ThirdParty */,
 			);
 			path = Global;
@@ -340,13 +338,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				14846CB32660D630003CDD8A /* BaseRequest.swift in Sources */,
+				14B6A84827E5B20300C44A20 /* WebViewController.swift in Sources */,
+				149D589628115685001F17C2 /* WebViewBaseScriptEvent.swift in Sources */,
 				344A8AE12654AC5E00986D3E /* ViewController.swift in Sources */,
 				14846CAF2660D5FB003CDD8A /* BaseModel.swift in Sources */,
 				140B2B6427422E960033F071 /* GlobalManager.swift in Sources */,
-				14C305AB274CEF84006A6746 /* LocationBgTask.swift in Sources */,
 				344A8ADD2654AC5E00986D3E /* AppDelegate.swift in Sources */,
 				140B2B68274232050033F071 /* UIView+Toast.swift in Sources */,
-				14C305AC274CEF84006A6746 /* LocationManager.swift in Sources */,
 				14C30586274B83C8006A6746 /* SwiftHeadFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -471,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -492,7 +490,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = URCRPD948D;
 				INFOPLIST_FILE = projectDemo/Resource/Plist/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,6 +499,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cheng.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "projectDemo/Resource/Bridge/projectDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -519,7 +518,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = URCRPD948D;
 				INFOPLIST_FILE = projectDemo/Resource/Plist/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,6 +527,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cheng.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "projectDemo/Resource/Bridge/projectDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

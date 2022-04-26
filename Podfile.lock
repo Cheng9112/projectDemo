@@ -10,7 +10,8 @@ PODS:
   - CocoaLumberjack/Core (3.7.2)
   - CocoaLumberjack/Swift (3.7.2):
     - CocoaLumberjack/Core
-  - Gallery (2.2.2)
+  - dsBridge (3.0.6)
+  - Gallery (2.4.0)
   - HandyJSON (5.0.2)
   - Regift (1.5.0)
   - SnapKit (5.0.1)
@@ -21,6 +22,7 @@ PODS:
 DEPENDENCIES:
   - CHCUIKit (= 0.1.2)
   - CocoaLumberjack/Swift (= 3.7.2)
+  - dsBridge
   - Gallery
   - HandyJSON (= 5.0.2)
   - Regift
@@ -33,6 +35,7 @@ SPEC REPOS:
     - AFNetworking
     - CHCUIKit
     - CocoaLumberjack
+    - dsBridge
     - Gallery
     - HandyJSON
     - Regift
@@ -44,13 +47,14 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   CHCUIKit: f84105c4dcc9f42917cfc0a49f1374cab3304f6b
   CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
-  Gallery: 634ea7d58b93fcb8e787a846febac73ec354e7d9
+  dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
+  Gallery: b7fc1aeb68a39ad6d2c423574750196bf9b25e5c
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   Regift: d097afd401021f4f42b102ee125ceeb125a38caf
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   YTKNetwork: 0587ce85fda2e2c591405089cc9aaa61649aa5ed
 
-PODFILE CHECKSUM: e397da27f1424e3638f3cdd5a1f9f729da13b42d
+PODFILE CHECKSUM: aafe8ea1706584146435e7eeda54270c0def2538
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
