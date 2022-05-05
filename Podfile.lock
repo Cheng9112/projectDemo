@@ -1,11 +1,6 @@
 PODS:
-  - AFNetworking/NSURLSession (4.0.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1)
-  - AFNetworking/Security (4.0.1)
-  - AFNetworking/Serialization (4.0.1)
+  - Alamofire (5.6.1)
+  - Cache (6.0.0)
   - CHCUIKit (0.1.2)
   - CocoaLumberjack/Core (3.7.2)
   - CocoaLumberjack/Swift (3.7.2):
@@ -13,48 +8,53 @@ PODS:
   - dsBridge (3.0.6)
   - Gallery (2.4.0)
   - HandyJSON (5.0.2)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
   - Regift (1.5.0)
   - SnapKit (5.0.1)
   - Toast-Swift (5.0.1)
-  - YTKNetwork (3.0.0):
-    - AFNetworking/NSURLSession (~> 4.0)
 
 DEPENDENCIES:
+  - Cache
   - CHCUIKit (= 0.1.2)
   - CocoaLumberjack/Swift (= 3.7.2)
   - dsBridge
   - Gallery
   - HandyJSON (= 5.0.2)
+  - Moya (~> 15.0)
   - Regift
   - SnapKit (= 5.0.1)
   - Toast-Swift (= 5.0.1)
-  - YTKNetwork (= 3.0.0)
 
 SPEC REPOS:
   trunk:
-    - AFNetworking
+    - Alamofire
+    - Cache
     - CHCUIKit
     - CocoaLumberjack
     - dsBridge
     - Gallery
     - HandyJSON
+    - Moya
     - Regift
     - SnapKit
     - Toast-Swift
-    - YTKNetwork
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
   CHCUIKit: f84105c4dcc9f42917cfc0a49f1374cab3304f6b
   CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   Gallery: b7fc1aeb68a39ad6d2c423574750196bf9b25e5c
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   Regift: d097afd401021f4f42b102ee125ceeb125a38caf
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
-  YTKNetwork: 0587ce85fda2e2c591405089cc9aaa61649aa5ed
 
-PODFILE CHECKSUM: aafe8ea1706584146435e7eeda54270c0def2538
+PODFILE CHECKSUM: 8083ae844aee274722b11033b0b77941572a431b
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.10.1

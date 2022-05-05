@@ -13,11 +13,17 @@ class GlobalManager: NSObject {
         super.init()
         if installed {
             
+            /// 日志打印
             DDLog.add(DDOSLogger.sharedInstance) // Uses os_log
-
             let fileLogger: DDFileLogger = DDFileLogger() // File Logger
             fileLogger.logFileManager.maximumNumberOfLogFiles = 100
             DDLog.add(fileLogger)
+            
+            /// 网络监控
+            NetworkStatusManager.shared.networkReachablility { status in
+            }
+            
+            /// 
         }
     }
 }

@@ -13,9 +13,10 @@ target 'projectDemo' do
   pod 'Toast-Swift', '5.0.1'
   pod 'CocoaLumberjack/Swift', '3.7.2'
   pod 'Gallery'
+  pod 'Cache'
+  pod 'Moya', '~> 15.0'
 
   # OC 库
-  pod 'YTKNetwork', '3.0.0'
   pod 'dsBridge'
   
 #  post_install do |installer|

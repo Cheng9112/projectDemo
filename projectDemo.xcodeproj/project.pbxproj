@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		140B2B6427422E960033F071 /* GlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140B2B6327422E950033F071 /* GlobalManager.swift */; };
 		140B2B68274232050033F071 /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140B2B67274232050033F071 /* UIView+Toast.swift */; };
-		14846CAF2660D5FB003CDD8A /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14846CAE2660D5FB003CDD8A /* BaseModel.swift */; };
-		14846CB32660D630003CDD8A /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14846CB22660D630003CDD8A /* BaseRequest.swift */; };
+		1449E45D2818DD8E00DF197E /* WebCacheEventHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449E45C2818DD8E00DF197E /* WebCacheEventHandle.swift */; };
+		1449E462281A8C9900DF197E /* NetworkStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449E461281A8C9900DF197E /* NetworkStatusManager.swift */; };
 		149D589628115685001F17C2 /* WebViewBaseScriptEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D589528115685001F17C2 /* WebViewBaseScriptEvent.swift */; };
 		14B6A84827E5B20300C44A20 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6A84727E5B20300C44A20 /* WebViewController.swift */; };
 		14C30586274B83C8006A6746 /* SwiftHeadFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C30585274B83C8006A6746 /* SwiftHeadFile.swift */; };
@@ -25,8 +25,8 @@
 		029703BDC1475643953EF918 /* Pods-projectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectDemo.release.xcconfig"; path = "Target Support Files/Pods-projectDemo/Pods-projectDemo.release.xcconfig"; sourceTree = "<group>"; };
 		140B2B6327422E950033F071 /* GlobalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalManager.swift; sourceTree = "<group>"; };
 		140B2B67274232050033F071 /* UIView+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
-		14846CAE2660D5FB003CDD8A /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		14846CB22660D630003CDD8A /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		1449E45C2818DD8E00DF197E /* WebCacheEventHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheEventHandle.swift; sourceTree = "<group>"; };
+		1449E461281A8C9900DF197E /* NetworkStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusManager.swift; sourceTree = "<group>"; };
 		149D589528115685001F17C2 /* WebViewBaseScriptEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewBaseScriptEvent.swift; sourceTree = "<group>"; };
 		14B6A84727E5B20300C44A20 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		14C30585274B83C8006A6746 /* SwiftHeadFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHeadFile.swift; sourceTree = "<group>"; };
@@ -79,10 +79,17 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		1449E460281A8C6400DF197E /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				1449E461281A8C9900DF197E /* NetworkStatusManager.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		14846CAC2660D5AE003CDD8A /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				14846CB22660D630003CDD8A /* BaseRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -90,7 +97,6 @@
 		14846CAD2660D5BA003CDD8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				14846CAE2660D5FB003CDD8A /* BaseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +106,7 @@
 			children = (
 				14B6A84727E5B20300C44A20 /* WebViewController.swift */,
 				149D589528115685001F17C2 /* WebViewBaseScriptEvent.swift */,
+				1449E45C2818DD8E00DF197E /* WebCacheEventHandle.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -153,6 +160,7 @@
 		14C593712660D1DA007BD8E5 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				1449E460281A8C6400DF197E /* Tool */,
 				14846CAD2660D5BA003CDD8A /* Model */,
 				14846CAC2660D5AE003CDD8A /* Request */,
 			);
@@ -337,12 +345,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14846CB32660D630003CDD8A /* BaseRequest.swift in Sources */,
 				14B6A84827E5B20300C44A20 /* WebViewController.swift in Sources */,
 				149D589628115685001F17C2 /* WebViewBaseScriptEvent.swift in Sources */,
 				344A8AE12654AC5E00986D3E /* ViewController.swift in Sources */,
-				14846CAF2660D5FB003CDD8A /* BaseModel.swift in Sources */,
+				1449E45D2818DD8E00DF197E /* WebCacheEventHandle.swift in Sources */,
 				140B2B6427422E960033F071 /* GlobalManager.swift in Sources */,
+				1449E462281A8C9900DF197E /* NetworkStatusManager.swift in Sources */,
 				344A8ADD2654AC5E00986D3E /* AppDelegate.swift in Sources */,
 				140B2B68274232050033F071 /* UIView+Toast.swift in Sources */,
 				14C30586274B83C8006A6746 /* SwiftHeadFile.swift in Sources */,
@@ -488,7 +496,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = URCRPD948D;
+				DEVELOPMENT_TEAM = N5M2YYXAZ3;
 				INFOPLIST_FILE = projectDemo/Resource/Plist/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
