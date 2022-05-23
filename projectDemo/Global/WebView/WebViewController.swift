@@ -70,7 +70,35 @@ class WebViewController: UIViewController {
 
 extension WebViewController: WKNavigationDelegate {
     
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        if let url = navigationAction.request.url, allowLoadingURL(url: url) {
+            decisionHandler(.allow)
+        } else {
+            decisionHandler(.cancel)
+        }
+    }
     
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        
+    }
+}
+
+extension WebViewController: WKUIDelegate {
+    
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        
+
+        return nil
+    }
 }
 
 // MARK: PUBLIC
@@ -100,5 +128,15 @@ extension WebViewController {
             originalRequest = urlRequest
             webView.load(urlRequest)
         }
+    }
+    
+    /// 是否允许加载链接
+    public func allowLoadingURL(url: URL) -> Bool {
+        
+        if let scheme = url.scheme, scheme == "http" || scheme == "https" {
+            
+            return true
+        }
+        return false
     }
 }
