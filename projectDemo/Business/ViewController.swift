@@ -29,17 +29,25 @@ class ViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-}
-
-extension ViewController: GalleryControllerDelegate {
     
     @objc func videoCoverToGif() {
         
-        let gallery = GalleryController()
-        gallery.delegate = self
-        present(gallery, animated: true, completion: nil)
+//        let gallery = GalleryController()
+//        gallery.delegate = self
+//        present(gallery, animated: true, completion: nil)
+        
+        let webvc = WebViewController()
+        webvc.loadRequest(urlString: "http://www.baidu.com")
+        present(webvc, animated: true, completion: nil)
+        
+        let webvc1 = WebViewController()
+        webvc1.loadRequest(urlString: "http://www.baidu.com")
     }
-    
+
+}
+
+extension ViewController: GalleryControllerDelegate {
+        
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
         
     }

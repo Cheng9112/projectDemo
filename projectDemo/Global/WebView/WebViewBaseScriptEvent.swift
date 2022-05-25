@@ -24,7 +24,7 @@ class WebViewBaseScriptEvent: NSObject {
     @objc func openNewWebView( _ arg: String) -> Void {
         
         let webVC = WebViewController()
-        
+        webVC.loadRequest(urlString: arg)
         if let nav = getCurrentViewController() as? UINavigationController {
             nav.pushViewController(webVC, animated: true)
         } else if let vc = getCurrentViewController() {
