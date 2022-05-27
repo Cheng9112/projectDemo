@@ -128,9 +128,14 @@ extension WebViewController {
         configuration.suppressesIncrementalRendering = false    ///设置是否将网页内容全部加载到内存后再渲染
         configuration.processPool = WebProcessPool.shared       ///web内容处理池
         
-        var userContentController = WKUserContentController.init()
+        let userContentController = WKUserContentController.init()
         configuration.userContentController = userContentController
-        
+        if #available(iOS 11.0, *), let cookie = getUserCookie() {
+            WebViewController.setCookie(cookie: cookie)
+        } else if let cookie = getUserCookie() {
+            WebViewController.setCookie(cookie: cookie)
+            setCookieByScript(cookie: cookie, userContentcontroller: userContentController)
+        }
         
         let webview = DWKWebView.init(frame: CGRect.zero, configuration: configuration)
         webview.scrollView.bounces = false
@@ -179,9 +184,8 @@ extension WebViewController {
 extension WebViewController {
     
     /// 清除WkWebView 缓存
+    @available(iOS 11.0, *)
     public static func removeWebSiteCache() {
-        
-        guard #available(iOS 11.0, *) else { return }
         
         DispatchQueue.main.async {
             if #available(iOS 11.3, *) {
@@ -193,6 +197,17 @@ extension WebViewController {
             }
         }
     }
+    
+    /// 设置webView Cookies
+    @available(iOS 11.0, *)
+    public static func setCookie(cookie: HTTPCookie) {
+        
+        let wkWebsiteDataStore = WKWebsiteDataStore.default()
+        let wkHttpCookieStore = wkWebsiteDataStore.httpCookieStore
+        wkHttpCookieStore.setCookie(cookie) {
+            /// cookie设置完成
+        }
+    }
 
     /// 加载链接
     public func loadRequest(urlString: String) {
@@ -201,16 +216,6 @@ extension WebViewController {
             currentRequest = urlRequest
             originalRequest = urlRequest
             dwkWebView.load(urlRequest)
-        }
-    }
-    
-    /// 设置webView Cookies
-    public static func setCookie(cookie: HTTPCookie) {
-        
-        let wkWebsiteDataStore = WKWebsiteDataStore.default()
-        let wkHttpCookieStore = wkWebsiteDataStore.httpCookieStore
-        wkHttpCookieStore.setCookie(cookie) {
-            /// cookie设置完成
         }
     }
     
