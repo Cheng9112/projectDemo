@@ -21,6 +21,7 @@ class GlobalManager: NSObject {
             
             /// 网络监控
             NetworkStatusManager.shared.networkReachablility { status in
+                print(status)
             }
             
             /// 

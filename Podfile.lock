@@ -8,11 +8,13 @@ PODS:
   - dsBridge (3.0.6)
   - Gallery (2.4.0)
   - HandyJSON (5.0.2)
-  - Moya (15.0.0):
-    - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
   - Regift (1.5.0)
+  - RxSwift (6.5.0)
   - SnapKit (5.0.1)
   - Toast-Swift (5.0.1)
 
@@ -23,7 +25,7 @@ DEPENDENCIES:
   - dsBridge
   - Gallery
   - HandyJSON (= 5.0.2)
-  - Moya (~> 15.0)
+  - Moya/RxSwift (~> 15.0)
   - Regift
   - SnapKit (= 5.0.1)
   - Toast-Swift (= 5.0.1)
@@ -39,6 +41,7 @@ SPEC REPOS:
     - HandyJSON
     - Moya
     - Regift
+    - RxSwift
     - SnapKit
     - Toast-Swift
 
@@ -52,9 +55,10 @@ SPEC CHECKSUMS:
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   Regift: d097afd401021f4f42b102ee125ceeb125a38caf
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 8083ae844aee274722b11033b0b77941572a431b
+PODFILE CHECKSUM: 2298fa847023b05ffe36700e3d74f946567d9635
 
 COCOAPODS: 1.10.1

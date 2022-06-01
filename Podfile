@@ -14,7 +14,7 @@ target 'projectDemo' do
   pod 'CocoaLumberjack/Swift', '3.7.2'
   pod 'Gallery'
   pod 'Cache'
-  pod 'Moya', '~> 15.0'
+  pod 'Moya/RxSwift', '~> 15.0'
 
   # OC 库
   pod 'dsBridge'

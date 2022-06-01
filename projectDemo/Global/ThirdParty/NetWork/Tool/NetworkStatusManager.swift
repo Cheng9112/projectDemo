@@ -9,17 +9,32 @@ import UIKit
 import Alamofire
 
 enum NetworkStatus {
-    case notReachable
     case unknown
+    case notReachable
     case reachableWiFi
     case reachableCellular
+    
+    public var encode: Int {
+        switch self {
+        case .unknown:
+            return 0
+        case .notReachable:
+            return 1
+        case .reachableWiFi:
+            return 2
+        case .reachableCellular:
+            return 3
+        }
+    }
 }
 
 class NetworkStatusManager: NSObject {
 
     static let shared = NetworkStatusManager()
     
-    var networkStatus: NetworkStatus = .unknown
+    private lazy var manager: NetworkReachabilityManager? = NetworkReachabilityManager.init()
+    
+    public var networkStatus: NetworkStatus = .unknown
     
     override init() {
         super.init()
@@ -27,7 +42,6 @@ class NetworkStatusManager: NSObject {
     
     func networkReachablility(status: @escaping(NetworkStatus) -> Void) {
         
-        let manager = NetworkReachabilityManager.init()
         manager?.startListening(onUpdatePerforming: { [weak self] networkStatus in
             
             switch networkStatus {

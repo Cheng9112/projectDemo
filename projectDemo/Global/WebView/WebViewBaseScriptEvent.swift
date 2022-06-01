@@ -32,7 +32,7 @@ class WebViewBaseScriptEvent: NSObject {
         }
     }
     
-    /// 打开新的WebView
+    /// 清除浏览器缓存
     @objc func clearWebCache( _ arg: String) -> Void {
         WebViewController.removeWebSiteCache()
     }
@@ -80,13 +80,16 @@ class WebViewBaseScriptEvent: NSObject {
         }
     }
     
+    /// 获取网络状态
+    @objc func getNetworkStatus( _ arg: NSDictionary, handler: (String, Bool)->Void) {
+        handler("\(NetworkStatusManager.shared.networkStatus.encode)", true)
+    }
+    
     /// 获取通知权限
     /// 获取定位权限
     /// 图片下载
     /// 视频下载
-    /// 获取网络状态
 
-    
     ///----业务模块----
     /// 获取App Cookie
 
