@@ -7,7 +7,6 @@
 
 import Foundation
 import Moya
-import Combine
 
 let globalProvider = MoyaProvider<GlobalApi>(plugins: [GlobalPlugin()])
 

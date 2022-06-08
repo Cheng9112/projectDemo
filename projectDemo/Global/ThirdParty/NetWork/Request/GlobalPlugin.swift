@@ -21,6 +21,7 @@ class GlobalPlugin: PluginType {
     }
     
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
+        print("Request: \(String(describing: target.baseURL.absoluteString + target.path)) did Receive result \(result)")
     }
     
     func process(_ result: Result<Response, MoyaError>, target: TargetType) -> Result<Response, MoyaError> {
