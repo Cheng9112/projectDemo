@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CocoaLumberjack
 
 class GlobalManager: NSObject {
     
@@ -14,10 +15,7 @@ class GlobalManager: NSObject {
         if installed {
             
             /// 日志打印
-            DDLog.add(DDOSLogger.sharedInstance) // Uses os_log
-            let fileLogger: DDFileLogger = DDFileLogger() // File Logger
-            fileLogger.logFileManager.maximumNumberOfLogFiles = 100
-            DDLog.add(fileLogger)
+            let _ = LogManager.init(baseInfo: [:])
             
             /// 网络监控
             NetworkStatusManager.shared.networkReachablility { status in

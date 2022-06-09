@@ -21,6 +21,7 @@
 		344A8AE62654AC5F00986D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 344A8AE52654AC5F00986D3E /* Assets.xcassets */; };
 		344A8AE92654AC5F00986D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344A8AE72654AC5F00986D3E /* LaunchScreen.storyboard */; };
 		79AD4957E1B0E6ACC36EF646 /* Pods_projectDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8A9BE77ECF3E9FED24BDC7 /* Pods_projectDemo.framework */; };
+		BD9B69542851E1A8000B5091 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B69532851E1A8000B5091 /* LogManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		344A8AE82654AC5F00986D3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		344A8AEA2654AC5F00986D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B8A9BE77ECF3E9FED24BDC7 /* Pods_projectDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_projectDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD9B69532851E1A8000B5091 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +102,6 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		14846CAD2660D5BA003CDD8A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		14B6A84027DA516000C44A20 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +152,7 @@
 		14C593702660D193007BD8E5 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				BD9B69522851E07C000B5091 /* LogManager */,
 				140B2B66274231C00033F071 /* Manager */,
 				14C593712660D1DA007BD8E5 /* NetWork */,
 			);
@@ -167,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				1449E460281A8C6400DF197E /* Tool */,
-				14846CAD2660D5BA003CDD8A /* Model */,
 				14846CAC2660D5AE003CDD8A /* Request */,
 			);
 			path = NetWork;
@@ -234,6 +229,14 @@
 				9B8A9BE77ECF3E9FED24BDC7 /* Pods_projectDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD9B69522851E07C000B5091 /* LogManager */ = {
+			isa = PBXGroup;
+			children = (
+				BD9B69532851E1A8000B5091 /* LogManager.swift */,
+			);
+			path = LogManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9B69542851E1A8000B5091 /* LogManager.swift in Sources */,
 				14B6A84827E5B20300C44A20 /* WebViewController.swift in Sources */,
 				14FC5EE8284473DB0072454B /* GlobalApi.swift in Sources */,
 				149D589628115685001F17C2 /* WebViewBaseScriptEvent.swift in Sources */,

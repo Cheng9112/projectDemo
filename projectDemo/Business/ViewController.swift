@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import Regift
 import Photos
 import Gallery
 import RxSwift
@@ -30,16 +29,16 @@ class ViewController: UIViewController {
 //            make.centerX.equalToSuperview()
 //        }
         
-        globalProvider.rx.request(.baseConfig).subscribe { event in
-            switch event {
-            case let .success(response):
-                print(response.data)
-                break
-            case let .failure(error):
-                print(error)
-                break
-            }
-        }
+//        globalProvider.rx.request(.baseConfig).subscribe { event in
+//            switch event {
+//            case let .success(response):
+//                print(response.data)
+//                break
+//            case let .failure(error):
+//                print(error)
+//                break
+//            }
+//        }
         
         
     }
