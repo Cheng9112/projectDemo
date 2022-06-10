@@ -12,7 +12,7 @@ class LogManager {
     
     init(baseInfo: Dictionary<String, Any>) {
         
-        DDLog.add(DDOSLogger.sharedInstance) // Uses os_log
+        DDLog.add(DDTTYLogger.sharedInstance ?? DDOSLogger.sharedInstance) // Uses os_log
         
         let path = NSHomeDirectory() + "Library/cache/log"
         let logFileManagerDefault = DDLogFileManagerDefault(logsDirectory: path)

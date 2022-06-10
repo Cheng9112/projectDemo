@@ -8,6 +8,7 @@
 import UIKit
 import WebKit
 import dsBridge
+import CocoaLumberjack
 
 class WebProcessPool: WKProcessPool {
     
@@ -59,7 +60,7 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         view.addSubview(dwkWebView)
         dwkWebView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -85,10 +86,12 @@ extension WebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         finishLoad = true
+        DDLogDebug("didFinishNavigation")
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         finishLoad = true
+        DDLogDebug("didFailProvisionalNavigation url:\(webView.url?.absoluteString ?? "default") \nl error:\(error)")
     }
     
     /// 当web进程即将崩溃时调用，用于刷新页面防止白屏
@@ -130,12 +133,12 @@ extension WebViewController {
         
         let userContentController = WKUserContentController.init()
         configuration.userContentController = userContentController
-        if #available(iOS 11.0, *), let cookie = getUserCookie() {
-            WebViewController.setCookie(cookie: cookie)
-        } else if let cookie = getUserCookie() {
-            WebViewController.setCookie(cookie: cookie)
-            setCookieByScript(cookie: cookie, userContentcontroller: userContentController)
-        }
+//        if #available(iOS 11.0, *), let cookie = getUserCookie() {
+//            WebViewController.setCookie(cookie: cookie)
+//        } else if let cookie = getUserCookie() {
+//            WebViewController.setCookie(cookie: cookie)
+//            setCookieByScript(cookie: cookie, userContentcontroller: userContentController)
+//        }
         
         let webview = DWKWebView.init(frame: CGRect.zero, configuration: configuration)
         webview.scrollView.bounces = false
@@ -200,12 +203,15 @@ extension WebViewController {
     
     /// 设置webView Cookies
     @available(iOS 11.0, *)
-    public static func setCookie(cookie: HTTPCookie) {
+    public static func setCookie(cookie: HTTPCookie, _ completionHandler: (() -> Void)? = nil) {
         
         let wkWebsiteDataStore = WKWebsiteDataStore.default()
         let wkHttpCookieStore = wkWebsiteDataStore.httpCookieStore
         wkHttpCookieStore.setCookie(cookie) {
             /// cookie设置完成
+            if (completionHandler != nil) {
+                completionHandler!()
+            }
         }
     }
 
