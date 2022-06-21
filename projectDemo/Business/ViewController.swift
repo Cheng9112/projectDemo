@@ -53,19 +53,19 @@ extension ViewController {
 //        gallery.delegate = self
 //        present(gallery, animated: true, completion: nil)
         
-//        let cookieProperty: [HTTPCookiePropertyKey : Any] = [
-//            HTTPCookiePropertyKey.name: "token",
-//            HTTPCookiePropertyKey.value: "token|898607E9C420F51F2A249E11DE27D65F9C790E4957C254871DEEA18F18A581281C7EC0505FEE4F0FEC3FE08D44C2DE12",
-//            HTTPCookiePropertyKey.domain: ".yunjiglobal.com" ,
-//            HTTPCookiePropertyKey.path: "/",
-//            HTTPCookiePropertyKey.expires: Date.init(timeIntervalSinceNow: 2629743)
-//        ]
-//        let cookie = HTTPCookie.init(properties: cookieProperty)
-//        WebViewController.setCookie(cookie: cookie!) { [weak self] in
-//            let webvc = WebViewController()
-//            webvc.loadRequest(urlString: "http://v.yunjiglobal.com/directorbackstage/saleRank?startTime=1654012800000&endTime=1654839812316")
-//            self?.present(webvc, animated: true, completion: nil)
-//        }
+        let cookieProperty: [HTTPCookiePropertyKey : Any] = [
+            HTTPCookiePropertyKey.name: "cookie",
+            HTTPCookiePropertyKey.value: "ticket|5637404_70edb82db90e4ece336e5acee9df1485",
+            HTTPCookiePropertyKey.domain: ".yunjiglobal.com" ,
+            HTTPCookiePropertyKey.path: "/",
+            HTTPCookiePropertyKey.expires: Date.init(timeIntervalSinceNow: 2629743)
+        ]
+        let cookie = HTTPCookie.init(properties: cookieProperty)
+        WebViewController.setCookie(cookie: cookie!) { [weak self] in
+            let webvc = WebViewController()
+            webvc.loadRequest(urlString: "http://v.yunjiglobal.com/yjbuyer/superBrand?shopId=5637404&appCont=0")
+            self?.present(webvc, animated: true, completion: nil)
+        }
     }
 }
 

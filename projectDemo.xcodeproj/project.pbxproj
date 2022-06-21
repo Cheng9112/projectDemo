@@ -14,6 +14,7 @@
 		149D589628115685001F17C2 /* WebViewBaseScriptEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D589528115685001F17C2 /* WebViewBaseScriptEvent.swift */; };
 		14B6A84827E5B20300C44A20 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6A84727E5B20300C44A20 /* WebViewController.swift */; };
 		14C30586274B83C8006A6746 /* SwiftHeadFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C30585274B83C8006A6746 /* SwiftHeadFile.swift */; };
+		14E06A7628606D4800E457D6 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E06A7528606D4800E457D6 /* DeviceInfo.swift */; };
 		14FC5EE8284473DB0072454B /* GlobalApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FC5EE7284473DB0072454B /* GlobalApi.swift */; };
 		14FC5EEA28449ED70072454B /* GlobalPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FC5EE928449ED70072454B /* GlobalPlugin.swift */; };
 		344A8ADD2654AC5E00986D3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344A8ADC2654AC5E00986D3E /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		14C30585274B83C8006A6746 /* SwiftHeadFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHeadFile.swift; sourceTree = "<group>"; };
 		14C3058D274B9D3F006A6746 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		14C5937E2660D3D3007BD8E5 /* projectDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "projectDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		14E06A7528606D4800E457D6 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		14FC5EE7284473DB0072454B /* GlobalApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalApi.swift; sourceTree = "<group>"; };
 		14FC5EE928449ED70072454B /* GlobalPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPlugin.swift; sourceTree = "<group>"; };
 		2ABB6603B513E40D840CEFD8 /* Pods-projectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectDemo.debug.xcconfig"; path = "Target Support Files/Pods-projectDemo/Pods-projectDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		14C5936F2660D178007BD8E5 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				14E06A7428606D2F00E457D6 /* DeviceInfo */,
 				14B6A84027DA516000C44A20 /* WebView */,
 				14C593702660D193007BD8E5 /* ThirdParty */,
 			);
@@ -191,6 +194,14 @@
 				14C30585274B83C8006A6746 /* SwiftHeadFile.swift */,
 			);
 			path = Bridge;
+			sourceTree = "<group>";
+		};
+		14E06A7428606D2F00E457D6 /* DeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				14E06A7528606D4800E457D6 /* DeviceInfo.swift */,
+			);
+			path = DeviceInfo;
 			sourceTree = "<group>";
 		};
 		344A8AD02654AC5E00986D3E = {
@@ -356,6 +367,7 @@
 			files = (
 				BD9B69542851E1A8000B5091 /* LogManager.swift in Sources */,
 				14B6A84827E5B20300C44A20 /* WebViewController.swift in Sources */,
+				14E06A7628606D4800E457D6 /* DeviceInfo.swift in Sources */,
 				14FC5EE8284473DB0072454B /* GlobalApi.swift in Sources */,
 				149D589628115685001F17C2 /* WebViewBaseScriptEvent.swift in Sources */,
 				344A8AE12654AC5E00986D3E /* ViewController.swift in Sources */,

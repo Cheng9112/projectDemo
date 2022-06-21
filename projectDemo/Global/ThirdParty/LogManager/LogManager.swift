@@ -8,6 +8,7 @@
 import Foundation
 import CocoaLumberjack
 
+
 class LogManager {
     
     init(baseInfo: Dictionary<String, Any>) {
@@ -28,7 +29,20 @@ class LogManager {
         fileLogger.maximumFileSize = 2 * 1024 * 1024
         
         DDLog.add(fileLogger)
+        
+        DDLogDebug(DeviceInfo.deviceSupplier())
+        DDLogDebug(DeviceInfo.deviceIP())
+        DDLogDebug(DeviceInfo.deviceCpuType())
+        DDLogDebug(DeviceInfo.deviceCpuCount())
+        DDLogDebug(DeviceInfo.deviceCPUUsage())
+        DispatchQueue.main.asyncAfter(deadline: .now()+5000) {
+            DDLogDebug(DeviceInfo.deviceCPUUsage())
+        }
     }
-    
+}
+
+//MARK: - Private
+extension LogManager {
+
 
 }
