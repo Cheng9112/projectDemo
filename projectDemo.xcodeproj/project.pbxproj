@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		140B2B6427422E960033F071 /* GlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140B2B6327422E950033F071 /* GlobalManager.swift */; };
 		140B2B68274232050033F071 /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140B2B67274232050033F071 /* UIView+Toast.swift */; };
+		1428CDEA2861C2280070AE3A /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1428CDE92861C2280070AE3A /* AppInfo.swift */; };
 		1449E45D2818DD8E00DF197E /* WebCacheEventHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449E45C2818DD8E00DF197E /* WebCacheEventHandle.swift */; };
 		1449E462281A8C9900DF197E /* NetworkStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449E461281A8C9900DF197E /* NetworkStatusManager.swift */; };
 		149D589628115685001F17C2 /* WebViewBaseScriptEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D589528115685001F17C2 /* WebViewBaseScriptEvent.swift */; };
@@ -29,6 +30,7 @@
 		029703BDC1475643953EF918 /* Pods-projectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectDemo.release.xcconfig"; path = "Target Support Files/Pods-projectDemo/Pods-projectDemo.release.xcconfig"; sourceTree = "<group>"; };
 		140B2B6327422E950033F071 /* GlobalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalManager.swift; sourceTree = "<group>"; };
 		140B2B67274232050033F071 /* UIView+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
+		1428CDE92861C2280070AE3A /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		1449E45C2818DD8E00DF197E /* WebCacheEventHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheEventHandle.swift; sourceTree = "<group>"; };
 		1449E461281A8C9900DF197E /* NetworkStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusManager.swift; sourceTree = "<group>"; };
 		149D589528115685001F17C2 /* WebViewBaseScriptEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewBaseScriptEvent.swift; sourceTree = "<group>"; };
@@ -145,7 +147,7 @@
 		14C5936F2660D178007BD8E5 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				14E06A7428606D2F00E457D6 /* DeviceInfo */,
+				14E06A7428606D2F00E457D6 /* BaseInfo */,
 				14B6A84027DA516000C44A20 /* WebView */,
 				14C593702660D193007BD8E5 /* ThirdParty */,
 			);
@@ -196,12 +198,13 @@
 			path = Bridge;
 			sourceTree = "<group>";
 		};
-		14E06A7428606D2F00E457D6 /* DeviceInfo */ = {
+		14E06A7428606D2F00E457D6 /* BaseInfo */ = {
 			isa = PBXGroup;
 			children = (
 				14E06A7528606D4800E457D6 /* DeviceInfo.swift */,
+				1428CDE92861C2280070AE3A /* AppInfo.swift */,
 			);
-			path = DeviceInfo;
+			path = BaseInfo;
 			sourceTree = "<group>";
 		};
 		344A8AD02654AC5E00986D3E = {
@@ -378,6 +381,7 @@
 				344A8ADD2654AC5E00986D3E /* AppDelegate.swift in Sources */,
 				140B2B68274232050033F071 /* UIView+Toast.swift in Sources */,
 				14C30586274B83C8006A6746 /* SwiftHeadFile.swift in Sources */,
+				1428CDEA2861C2280070AE3A /* AppInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

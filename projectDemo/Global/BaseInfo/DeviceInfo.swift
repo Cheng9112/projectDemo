@@ -8,28 +8,16 @@
 import Foundation
 import AdSupport
 import CoreTelephony
+import MachO
 
 class DeviceInfo {
 
-    ///获取当前客户端的版本
-    public static func deviceClientVersion() -> String  {
-        if let url = Bundle.main.url(forResource: "Info", withExtension: "plist"),
-           let data = try? Data(contentsOf: url),
-           let plist = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil),
-           let dic = plist as? [String: Any],
-           let versionString = dic["CFBundleShortVersionString"] as? String {
-            
-            return versionString
-        }
-        return "未知版本";
-    }
-    
     ///获取系统版本
     public static func deviceSystemVersion() -> String {
         return UIDevice.current.systemVersion
     }
     
-    /// 获取设备的型号
+    ///获取设备的型号
     public static func deviceModel() -> String {
         
         var systemInfo = utsname()
@@ -108,7 +96,7 @@ class DeviceInfo {
         }
     }
 
-    /// 获取屏幕尺寸
+    ///获取屏幕尺寸
     public static func deviceResolution() -> String {
         return "\(UIScreen.main.bounds.width) * \(UIScreen.main.bounds.height)";
     }
@@ -146,7 +134,7 @@ class DeviceInfo {
         }
     }
     
-    /// 获取当前设备IP
+    ///获取当前设备IP
     public static func deviceIP() -> String {
         var addresses = [String]()
         var ifaddr : UnsafeMutablePointer<ifaddrs>? = nil
@@ -234,23 +222,9 @@ class DeviceInfo {
         }
     }
 
-    public static func blankof<T>(type:T.Type) -> T {
-        let ptr = UnsafeMutablePointer<T>.allocate(capacity: MemoryLayout<T>.size)
-        let val = ptr.pointee
-        return val
-    }
-    
-    /// 内存总大小
+    ///磁盘可用大小
     public static func deviceTotalDiskSize() -> String {
-        var fs = blankof(type: statfs.self)
-        if statfs("/var",&fs) >= 0{
-            return fileSizeToString(fileSize: Int64(UInt64(fs.f_bsize) * fs.f_blocks))
-        }
-        return "-1"
-    }
-    
-    /// 内存可用大小
-    public static func deviceAvailableDiskSize() -> String {
+        
         var fs = blankof(type: statfs.self)
         if statfs("/var",&fs) >= 0{
             return fileSizeToString(fileSize: Int64(UInt64(fs.f_bsize) * fs.f_bavail))
@@ -258,29 +232,7 @@ class DeviceInfo {
         return "-1"
     }
     
-    /// 将大小转换成字符串用以显示
-    public static func fileSizeToString(fileSize:Int64) -> String {
-        
-        let fileSize1 = CGFloat(fileSize)
-        
-        let KB:CGFloat = 1024
-        let MB:CGFloat = KB*KB
-        let GB:CGFloat = MB*KB
-        
-        if fileSize < 10 {
-            return "0 B"
-        } else if fileSize1 < KB {
-            return "< 1 KB"
-        } else if fileSize1 < MB {
-            return String(format: "%.1f KB", CGFloat(fileSize1)/KB)
-        } else if fileSize1 < GB {
-            return String(format: "%.1f MB", CGFloat(fileSize1)/MB)
-        } else {
-            return String(format: "%.1f GB", CGFloat(fileSize1)/GB)
-        }
-    }
-    
-    /// 获取CPU使用率
+    ///获取CPU使用率
     public static func deviceCPUUsage() -> Double {
         var kr: kern_return_t
         var task_info_count: mach_msg_type_number_t
@@ -331,7 +283,78 @@ class DeviceInfo {
 
         return tot_cpu
     }
+    
+    ///内存可用大小
+    public static func deviceAvailableMemorySize() -> String {
 
+        var usedMemory: Int64 = 0
+        
+        let hostPort: mach_port_t = mach_host_self()
+        var host_size: mach_msg_type_number_t = mach_msg_type_number_t(MemoryLayout<vm_statistics_data_t>.stride / MemoryLayout<integer_t>.stride)
+        var pagesize:vm_size_t = 0
+        host_page_size(hostPort, &pagesize)
+        var vmStat: task_vm_info_data_t = task_vm_info_data_t()
+        let status: kern_return_t = withUnsafeMutablePointer(to: &vmStat) { infoPtr in
+            infoPtr.withMemoryRebound(to: integer_t.self, capacity: Int(host_size)) { intPtr in
+                task_info(mach_task_self_, task_flavor_t(TASK_VM_INFO), intPtr, &host_size)
+            }
+        }
+        if status == KERN_SUCCESS {
+ 
+            usedMemory = (Int64)(vmStat.phys_footprint)
+            let total = (Int64)(ProcessInfo.processInfo.physicalMemory)
+            return fileSizeToString(fileSize: (Int64)(total) - usedMemory)
+        }
+        else {
+            return "0"
+        }
+        
+//        let memoryUsageInByte:Int64 = 0
+//        var vmInfo: task_vm_info_data_t
+//        vmInfo = task_vm_info_data_t()
+//        var count:mach_msg_type_number_t = mach_msg_type_number_t(MemoryLayout<task_vm_info_data_t>.size / MemoryLayout<integer_t>.size)
+//        let kr = withUnsafeMutablePointer(to: &vmInfo) { infoPtr in
+//             infoPtr.withMemoryRebound(to: integer_t.self, capacity: Int(count)) { intPtr in
+//                 task_info(mach_task_self_, task_flavor_t(TASK_VM_INFO), intPtr, &count)
+//             }
+//         }
+//            if kr == KERN_SUCCESS {
+//                memoryUsageInByte = (int64_t) vmInfo.phys_footprint;
+//            } else {
+//                NSLog(@"Error with task_info(): %s", mach_error_string(kernelReturn));
+//            }
+//            return memoryUsageInByte;
+    }
+    
+    
+    ///将大小转换成字符串用以显示
+    public static func fileSizeToString(fileSize:Int64) -> String {
+        
+        let fileSize1 = CGFloat(fileSize)
+        
+        let KB:CGFloat = 1024
+        let MB:CGFloat = KB*KB
+        let GB:CGFloat = MB*KB
+        
+        if fileSize < 10 {
+            return "0 B"
+        } else if fileSize1 < KB {
+            return "< 1 KB"
+        } else if fileSize1 < MB {
+            return String(format: "%.1f KB", CGFloat(fileSize1)/KB)
+        } else if fileSize1 < GB {
+            return String(format: "%.1f MB", CGFloat(fileSize1)/MB)
+        } else {
+            return String(format: "%.1f GB", CGFloat(fileSize1)/GB)
+        }
+    }
+
+    public static func blankof<T>(type:T.Type) -> T {
+        let ptr = UnsafeMutablePointer<T>.allocate(capacity: MemoryLayout<T>.size)
+        let val = ptr.pointee
+        return val
+    }
+    
     public static func convertThreadInfoToThreadBasicInfo(_ threadInfo: [integer_t]) -> thread_basic_info {
         var result = thread_basic_info()
 

@@ -26,6 +26,19 @@ enum NetworkStatus {
             return 3
         }
     }
+    
+    public var statusStr: String {
+        switch self {
+        case .unknown:
+            return "未知"
+        case .notReachable:
+            return "无网络"
+        case .reachableWiFi:
+            return "Wi-Fi"
+        case .reachableCellular:
+            return "手机流量"
+        }
+    }
 }
 
 class NetworkStatusManager: NSObject {
