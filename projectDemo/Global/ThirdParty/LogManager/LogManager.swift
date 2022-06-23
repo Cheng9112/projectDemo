@@ -13,8 +13,10 @@ class LogManager {
     
     init() {
         
-        DDLog.add(DDTTYLogger.sharedInstance ?? DDOSLogger.sharedInstance) // Uses os_log
-        
+        if let DDTTY = DDTTYLogger.sharedInstance {
+            DDLog.add(DDTTY)
+        }
+                
         let path = NSHomeDirectory() + "Library/cache/log"
         let logFileManagerDefault = DDLogFileManagerDefault(logsDirectory: path)
         
@@ -31,10 +33,17 @@ class LogManager {
         fileLogger.doNotReuseLogFiles = true
         
         DDLog.add(fileLogger)
+        
+        DDLogVerbose("Verbose");
+        DDLogDebug("Debug");
+        DDLogInfo("Info");
+        DDLogWarn("⚠️");
+        DDLogError("Error");
     }
 }
 
 //MARK: - Private
 extension LogManager {
 
+    
 }
