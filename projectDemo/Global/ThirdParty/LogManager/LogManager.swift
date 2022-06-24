@@ -14,7 +14,8 @@ class LogManager {
     init() {
         
         if let DDTTY = DDTTYLogger.sharedInstance {
-            DDLog.add(DDTTY)
+//            DDTTY.logFormatter = LogFormatter.init()
+            DDLog.add(DDTTY, with: .all)
         }
                 
         let path = NSHomeDirectory() + "Library/cache/log"
@@ -31,8 +32,8 @@ class LogManager {
         fileLogger.maximumFileSize = 2 * 1024 * 1024
         // 每次重新启动APP就建立日志文件
         fileLogger.doNotReuseLogFiles = true
-        
-        DDLog.add(fileLogger)
+        fileLogger.logFormatter = LogFormatter.init()
+        DDLog.add(fileLogger, with: .all)
         
         DDLogVerbose("Verbose");
         DDLogDebug("Debug");
@@ -42,8 +43,26 @@ class LogManager {
     }
 }
 
-//MARK: - Private
-extension LogManager {
-
+class LogFormatter: DDDispatchQueueLogFormatter {
     
+    override func format(message logMessage: DDLogMessage) -> String? {
+        
+        var logLevel = ""
+        switch logMessage.flag {
+        case .debug:
+            logLevel = "[Debug] >>>"
+        case .error:
+            logLevel = "[Error] >>>"
+        case .info:
+            logLevel = "[Info] >>>"
+        case .verbose:
+            logLevel = "[Verbose] >>>"
+        case .warning:
+            logLevel = "[Warning] >>>"
+        default:
+            logLevel = ""
+        }
+        
+        return "\(logLevel) [\(logMessage.fileName) \(logMessage.function ?? "未知")] [line: \(logMessage.line)] [Thread: \(queueThreadLabel(for: logMessage))]: \(logMessage.message)"
+    }
 }
