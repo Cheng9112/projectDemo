@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CocoaLumberjack
 
 class GlobalManager: NSObject {
     
@@ -16,15 +15,16 @@ class GlobalManager: NSObject {
             
             /// 网络监控
             NetworkStatusManager.shared.networkReachablility { status in
-                DDLogDebug("网络状态：\(status.statusStr)")
+                LogInfo("网络状态：\(status.statusStr)")
             }
             
             /// 日志打印
-            let _ = LogManager.init()
-            DDLogDebug(deviceInfoLog())
-            DDLogDebug(appInfoLog())
+            let manager = LogManager.init()
             
-            /// 
+            LogInfo(deviceInfoLog())
+            LogInfo(appInfoLog())
+            
+            ///
         }
     }
 }

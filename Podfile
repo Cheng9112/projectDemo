@@ -11,10 +11,11 @@ target 'projectDemo' do
   pod 'SnapKit', '5.0.1'
   pod 'Toast-Swift', '5.0.1'
   pod 'CocoaLumberjack/Swift', '3.7.2'
-  pod 'Gallery'
-  pod 'Cache'
+  pod 'Gallery',  '2.4.0'
+  pod 'Cache',  '6.0.0'
   pod 'Moya/RxSwift', '~> 15.0'
-
+  pod 'Kingfisher', '~> 6.3.1'
+  
   # OC 库
   pod 'dsBridge'
   

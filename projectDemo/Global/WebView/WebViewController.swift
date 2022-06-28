@@ -8,7 +8,6 @@
 import UIKit
 import WebKit
 import dsBridge
-import CocoaLumberjack
 
 class WebProcessPool: WKProcessPool {
     
@@ -86,12 +85,12 @@ extension WebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         finishLoad = true
-        DDLogDebug("didFinishNavigation")
+        LogInfo("didFinishNavigation")
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         finishLoad = true
-        DDLogDebug("didFailProvisionalNavigation url:\(webView.url?.absoluteString ?? "default") \nl error:\(error)")
+        LogInfo("didFailProvisionalNavigation url:\(webView.url?.absoluteString ?? "default") \nl error:\(error)")
     }
     
     /// 当web进程即将崩溃时调用，用于刷新页面防止白屏

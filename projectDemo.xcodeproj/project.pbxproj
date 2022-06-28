@@ -10,6 +10,8 @@
 		140B2B6427422E960033F071 /* GlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140B2B6327422E950033F071 /* GlobalManager.swift */; };
 		140B2B68274232050033F071 /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140B2B67274232050033F071 /* UIView+Toast.swift */; };
 		1428CDEA2861C2280070AE3A /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1428CDE92861C2280070AE3A /* AppInfo.swift */; };
+		14487128286AFFDC00EBD50A /* LogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14487127286AFFDC00EBD50A /* LogFormatter.swift */; };
+		1448712B286B065900EBD50A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448712A286B065900EBD50A /* ImageManager.swift */; };
 		1449E45D2818DD8E00DF197E /* WebCacheEventHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449E45C2818DD8E00DF197E /* WebCacheEventHandle.swift */; };
 		1449E462281A8C9900DF197E /* NetworkStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1449E461281A8C9900DF197E /* NetworkStatusManager.swift */; };
 		149D589628115685001F17C2 /* WebViewBaseScriptEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D589528115685001F17C2 /* WebViewBaseScriptEvent.swift */; };
@@ -31,6 +33,8 @@
 		140B2B6327422E950033F071 /* GlobalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalManager.swift; sourceTree = "<group>"; };
 		140B2B67274232050033F071 /* UIView+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
 		1428CDE92861C2280070AE3A /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		14487127286AFFDC00EBD50A /* LogFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormatter.swift; sourceTree = "<group>"; };
+		1448712A286B065900EBD50A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		1449E45C2818DD8E00DF197E /* WebCacheEventHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheEventHandle.swift; sourceTree = "<group>"; };
 		1449E461281A8C9900DF197E /* NetworkStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusManager.swift; sourceTree = "<group>"; };
 		149D589528115685001F17C2 /* WebViewBaseScriptEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewBaseScriptEvent.swift; sourceTree = "<group>"; };
@@ -87,6 +91,14 @@
 				140B2B67274232050033F071 /* UIView+Toast.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		14487129286B064200EBD50A /* ImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				1448712A286B065900EBD50A /* ImageManager.swift */,
+			);
+			path = ImageManager;
 			sourceTree = "<group>";
 		};
 		1449E460281A8C6400DF197E /* Tool */ = {
@@ -157,6 +169,7 @@
 		14C593702660D193007BD8E5 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				14487129286B064200EBD50A /* ImageManager */,
 				BD9B69522851E07C000B5091 /* LogManager */,
 				140B2B66274231C00033F071 /* Manager */,
 				14C593712660D1DA007BD8E5 /* NetWork */,
@@ -249,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				BD9B69532851E1A8000B5091 /* LogManager.swift */,
+				14487127286AFFDC00EBD50A /* LogFormatter.swift */,
 			);
 			path = LogManager;
 			sourceTree = "<group>";
@@ -379,6 +393,8 @@
 				140B2B6427422E960033F071 /* GlobalManager.swift in Sources */,
 				1449E462281A8C9900DF197E /* NetworkStatusManager.swift in Sources */,
 				344A8ADD2654AC5E00986D3E /* AppDelegate.swift in Sources */,
+				1448712B286B065900EBD50A /* ImageManager.swift in Sources */,
+				14487128286AFFDC00EBD50A /* LogFormatter.swift in Sources */,
 				140B2B68274232050033F071 /* UIView+Toast.swift in Sources */,
 				14C30586274B83C8006A6746 /* SwiftHeadFile.swift in Sources */,
 				1428CDEA2861C2280070AE3A /* AppInfo.swift in Sources */,

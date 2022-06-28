@@ -8,19 +8,22 @@
 import Foundation
 import CocoaLumberjack
 
+public func LogInfo(_ message: Any) {
+    DDLogInfo(message)
+}
 
 class LogManager {
+    
+    private let logFilePath = NSHomeDirectory() + "Library/cache/log"
     
     init() {
         
         if let DDTTY = DDTTYLogger.sharedInstance {
-//            DDTTY.logFormatter = LogFormatter.init()
+            DDTTY.logFormatter = LogFormatter.init()
             DDLog.add(DDTTY, with: .all)
         }
                 
-        let path = NSHomeDirectory() + "Library/cache/log"
-        let logFileManagerDefault = DDLogFileManagerDefault(logsDirectory: path)
-        
+        let logFileManagerDefault = DDLogFileManagerDefault(logsDirectory: logFilePath)
         let fileLogger: DDFileLogger = DDFileLogger.init(logFileManager: logFileManagerDefault) // File Logger
         // 日志文件个数
         fileLogger.logFileManager.maximumNumberOfLogFiles = 1000
@@ -34,35 +37,17 @@ class LogManager {
         fileLogger.doNotReuseLogFiles = true
         fileLogger.logFormatter = LogFormatter.init()
         DDLog.add(fileLogger, with: .all)
-        
-        DDLogVerbose("Verbose");
-        DDLogDebug("Debug");
-        DDLogInfo("Info");
-        DDLogWarn("⚠️");
-        DDLogError("Error");
     }
 }
 
-class LogFormatter: DDDispatchQueueLogFormatter {
+extension LogManager {
     
-    override func format(message logMessage: DDLogMessage) -> String? {
+    /// 打包日志文件
+    private func packingLogFile() {
         
-        var logLevel = ""
-        switch logMessage.flag {
-        case .debug:
-            logLevel = "[Debug] >>>"
-        case .error:
-            logLevel = "[Error] >>>"
-        case .info:
-            logLevel = "[Info] >>>"
-        case .verbose:
-            logLevel = "[Verbose] >>>"
-        case .warning:
-            logLevel = "[Warning] >>>"
-        default:
-            logLevel = ""
-        }
+    }
+    /// 上传日志文件
+    private func uploadLogFile() {
         
-        return "\(logLevel) [\(logMessage.fileName) \(logMessage.function ?? "未知")] [line: \(logMessage.line)] [Thread: \(queueThreadLabel(for: logMessage))]: \(logMessage.message)"
     }
 }
