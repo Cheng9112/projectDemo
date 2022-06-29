@@ -28,19 +28,8 @@ class ViewController: UIViewController {
             make.top.equalToSuperview().offset(100)
             make.centerX.equalToSuperview()
         }
-        
-//        globalProvider.rx.request(.baseConfig).subscribe { event in
-//            switch event {
-//            case let .success(response):
-//                print(response.data)
-//                break
-//            case let .failure(error):
-//                print(error)
-//                break
-//            }
-//        }
-        
-        
+                
+        ImageDCManager().downloadImage(urlStr: "http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg")
     }
 
 }
