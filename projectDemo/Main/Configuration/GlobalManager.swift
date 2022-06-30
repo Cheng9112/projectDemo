@@ -19,7 +19,7 @@ class GlobalManager: NSObject {
             }
             
             /// 日志打印
-            let manager = LogManager.init()
+            let _ = LogManager.init()
             
             LogInfo(deviceInfoLog())
             LogInfo(appInfoLog())
